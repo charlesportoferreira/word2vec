@@ -1,3 +1,5 @@
+import os
+import sys
 import unittest
 
 import numpy
@@ -11,10 +13,6 @@ class TestFileOperations(unittest.TestCase):
     def test_read_file(self):
         fu = FileUtil()
         self.assertEqual("the book is on the table\n", fu.read("file.txt"))
-
-    def test_read_files_folder(self):
-        fu = FileUtil()
-        self.assertEqual("the book is on the floor\nthe book is on the table\n", fu.read_txt_folder("data"))
 
     def test_tokenizer(self):
         text = FileUtil().read("file.txt")
@@ -59,6 +57,12 @@ class TestFileOperations(unittest.TestCase):
             names += " " + folder
 
         self.assertEqual(" data2/a data2/c data2/d data2/b", names)
+
+    def test_count_number_files_folder(self):
+        sys.path.append(os.path.join(os.path.dirname(__file__), os.path.pardir))
+        file_util = FileUtil()
+        number_files = file_util.count_files('data2/a')
+        self.assertEqual(3, number_files)
 
 
 if __name__ == '__main__':

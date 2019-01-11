@@ -35,27 +35,30 @@ class Word2VectorUtil:
     def get_list_vectors(self, tokens):
         list_vec = []
         for token in tokens:
-            try:
-                if self.simulation:
-                    list_vec.append(self.word2vec_simulation(self.simulation_value))
-                else:
+            if self.simulation:
+                list_vec.append(self.word2vec_simulation(self.simulation_value))
+            else:
+                try:
                     list_vec.append(self.model.word_vec(token))
                     # print("vector found <" + token+ ">")
-            except KeyError:
-                # print("vector not found: <" + token + ">")  # do nothing
-                continue
+                except KeyError:
+                    # print("vector not found: <" + token + ">")  # do nothing
+                    continue
         return list_vec
 
-    def get_doc_vector(self, tokens, label):
+    def get_doc_vector(self, tokens):
         list_vec = self.get_list_vectors(tokens)
         if len(list_vec) == 0:
             return []  # no vector found
 
         if self.aggregator == "sum":
             doc_vector = numpy.sum(list_vec, axis=0)
-            return numpy.append(doc_vector, label)
+            # return numpy.append(doc_vector, label)
+            return doc_vector
 
         if self.aggregator == "mean":
             doc_vector = numpy.mean(list_vec, axis=0)
-            return numpy.append(doc_vector, label)
+            # return numpy.append(doc_vector, label)
+            return doc_vector
+
         raise "wrong aggregator: " + self.aggregator

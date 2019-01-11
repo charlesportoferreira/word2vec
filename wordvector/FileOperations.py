@@ -16,26 +16,10 @@ class FileUtil:
                 raise ("problem reading file: " + file_name)
         return text
 
-    def read_txt_folder(self, folder_name):
-        files = self.get_files_path(folder_name)
-        text = ""
-        for fi in files:
-            try:
-                with open(fi) as f:
-                    text += f.read()
-                f.close()
-            except IOError as exc:
-                if exc.errno != errno.EISDIR:
-                    raise ("problem reading file: " + fi)
-        return text
-
     def get_files_path(self, folder_name):
         current = folder_name + "/*.txt"
         files = glob.glob(current)
         return files
-
-    def get_current_path(self):
-        return os.path.dirname(os.path.realpath(__file__))
 
     def get_folders(self, folder_root):
         folders = []
@@ -58,6 +42,9 @@ class FileUtil:
         data = folder_path.split("/")
         return data[len(data) - 1]
 
+    def count_files(self, folder):
+        return sum([len(files) for r, d, files in os.walk(folder)])
+
 
 class ArffUtil:
     def get_header(self, num_features, labels):
@@ -76,10 +63,11 @@ class ArffUtil:
         features += "}\n\n@DATA"
         return features
 
-    def get_instance(self, doc_vector):
+    def get_instance(self, doc_vector, label):
         data = ""
         for feature in doc_vector:
-            data += feature + ","
-        data = FileUtil().remove_last_character(data)
-        data += "\n"
+            data += str(feature) + ","
+        data += label + "\n"
+        # data = FileUtil().remove_last_character(data)
+        # data += "\n"
         return data
