@@ -9,6 +9,7 @@ class Word2VectorUtil:
     simulation_value = 1
     model_path = None
     isBin = False
+    number_features = 0
 
     def __init__(self, aggregator, model_path, binary=False, simulation=False, simulation_value=1):
         self.simulation = simulation
@@ -20,6 +21,7 @@ class Word2VectorUtil:
             print("loading w2v model...")
             self.model = self.load_model()
             print('done!\nword2vec-size:\t', self.model.vector_size)
+            self.number_features = self.model.vector_size
 
     def load_model(self):
         if self.isBin:
@@ -48,6 +50,7 @@ class Word2VectorUtil:
         list_vec = self.get_list_vectors(tokens)
         if len(list_vec) == 0:
             return []  # no vector found
+
         if self.aggregator == "sum":
             doc_vector = numpy.sum(list_vec, axis=0)
             return numpy.append(doc_vector, label)

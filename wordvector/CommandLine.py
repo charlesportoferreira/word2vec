@@ -27,7 +27,7 @@ class CLWord2Vec:
         parser.add_argument('--model', type=str, action='store', dest='mod', metavar='<folder>', required=True,
                             help='trained word embeddings model')
         parser.add_argument('--aggregator', type=str, action='store', dest='agg', metavar='<value>', required=True,
-                            help='type of aggregator to use', choices=["sum", "aggregagor"])
+                            help='type of aggregator to use', choices=["sum", "mean"])
         parser.add_argument('--binary', type=bool, action='store', dest='bin', metavar='<value>', required=False,
                             help='set True if working with binary model', default=False)
         return parser
