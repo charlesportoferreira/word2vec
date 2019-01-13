@@ -45,10 +45,14 @@ class FileUtil:
     def count_files(self, folder):
         return sum([len(files) for r, d, files in os.walk(folder)])
 
+    def get_model_name(self, model_path):
+        data = model_path.split("/")
+        return data[len(data) - 1]
+
 
 class ArffUtil:
-    def get_header(self, num_features, labels):
-        title = "@RELATION w2v"
+    def get_header(self, num_features, labels, relation_name="w2v"):
+        title = "@RELATION " + relation_name
         features = self.create_features(labels, num_features)
         return title + "\n\n" + features + "\n"
 
@@ -68,6 +72,4 @@ class ArffUtil:
         for feature in doc_vector:
             data += str(feature) + ","
         data += label + "\n"
-        # data = FileUtil().remove_last_character(data)
-        # data += "\n"
         return data

@@ -52,13 +52,9 @@ class Word2VectorUtil:
             return []  # no vector found
 
         if self.aggregator == "sum":
-            doc_vector = numpy.sum(list_vec, axis=0)
-            # return numpy.append(doc_vector, label)
-            return doc_vector
+            return numpy.sum(list_vec, axis=0)
 
         if self.aggregator == "mean":
-            doc_vector = numpy.mean(list_vec, axis=0)
-            # return numpy.append(doc_vector, label)
-            return doc_vector
+            return numpy.mean(list_vec, axis=0)
 
         raise "wrong aggregator: " + self.aggregator
