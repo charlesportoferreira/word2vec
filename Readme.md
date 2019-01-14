@@ -11,6 +11,6 @@
 
 *--model*: Path to the word2vec trained model
 
-*--aggregator*: Select between sum or mean. Its set which way documento vector will be generated
+*--aggregator*: Select between sum or mean. Its set which way document vector will be generated
 
 *-- binary*: Optional parameter. Set true if you are using a binary model 
