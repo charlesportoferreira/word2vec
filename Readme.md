@@ -3,7 +3,9 @@
 ## Read text raw files, apply word2vec and generate a dataset in the arff format 
 
 
-**To use type: python3 wordvector/main.py --input folderName --output fileName.aff --model modelFolder --aggregator sum [--binary True] [--noheader True]**
+### To use type: 
+
+**python3 wordvector/main.py --input folderName --output fileName.aff --model modelFolder --aggregator sum [--binary True] [--noheader True]**
 
         *--input*: Path to the folder with the raw txt files
 
