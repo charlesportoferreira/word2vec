@@ -7,6 +7,7 @@ class CLWord2Vec:
     model_folder = None
     aggregator = None
     isBin = False
+    noHeader = False
 
     def __init__(self):
         parser = self.define_parser_parameters()
@@ -17,6 +18,7 @@ class CLWord2Vec:
         self.aggregator = args.agg
         self.model_folder = args.mod
         self.isBin = args.bin
+        self.noHeader = args.nohe
 
     def define_parser_parameters(self):
         parser = argparse.ArgumentParser(description="main - convert raw dataset into arff with word2vec features")
@@ -30,4 +32,6 @@ class CLWord2Vec:
                             help='type of aggregator to use', choices=["sum", "mean"])
         parser.add_argument('--binary', type=bool, action='store', dest='bin', metavar='<value>', required=False,
                             help='set True if working with binary model', default=False)
+        parser.add_argument('--noheader', type=bool, action='store', dest='nohe', metavar='<value>', required=False,
+                            help='set False to remove the arff header', default=False)
         return parser

@@ -37,7 +37,8 @@ class Main:
         header = arff_util.get_header(number_features, labels, relation_name)
 
         f = open(command_line.output_arff, 'w', errors="ignore")
-        f.write(header)
+        if not command_line.noHeader:
+            f.write(header)
 
         empty_doc = 0
         doc_without_vector = 0
