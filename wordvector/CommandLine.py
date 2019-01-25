@@ -17,7 +17,7 @@ class CLWord2Vec:
         self.output_arff = args.ouf
         self.aggregator = args.agg
         self.model_folder = args.mod
-        self.isBin = args.bin
+        self.type = args.type
         self.noHeader = args.nohe
 
     def define_parser_parameters(self):
@@ -30,8 +30,8 @@ class CLWord2Vec:
                             help='trained word embeddings model')
         parser.add_argument('--aggregator', type=str, action='store', dest='agg', metavar='<value>', required=True,
                             help='type of aggregator to use', choices=["sum", "mean"])
-        parser.add_argument('--binary', type=bool, action='store', dest='bin', metavar='<value>', required=False,
-                            help='set True if working with binary model', default=False)
+        parser.add_argument('--type', type=str, action='store', dest='type', metavar='<value>', required=True,
+                            help='Select the type of model to load', choices=["mssa", "google", "glove"], default=False)
         parser.add_argument('--noheader', type=bool, action='store', dest='nohe', metavar='<value>', required=False,
                             help='set False to remove the arff header', default=False)
         return parser

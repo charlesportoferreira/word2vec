@@ -1,5 +1,8 @@
 import gensim
 import numpy
+from gensim.models import KeyedVectors
+from gensim.scripts.glove2word2vec import glove2word2vec
+from gensim.test.utils import get_tmpfile
 
 
 class Word2VectorUtil:
@@ -8,15 +11,15 @@ class Word2VectorUtil:
     aggregator = "sum"
     simulation_value = 1
     model_path = None
-    isBin = False
     number_features = 0
+    type = None
 
-    def __init__(self, aggregator, model_path, binary=False, simulation=False, simulation_value=1):
+    def __init__(self, aggregator, model_path, type='mssa', simulation=False, simulation_value=1):
         self.simulation = simulation
         self.aggregator = aggregator
         self.simulation_value = simulation_value
         self.model_path = model_path
-        self.isBin = binary
+        self.type = type
         if not self.simulation:
             print("loading w2v model...")
             self.model = self.load_model()
@@ -24,10 +27,19 @@ class Word2VectorUtil:
             self.number_features = self.model.vector_size
 
     def load_model(self):
-        if self.isBin:
+        if self.type == "google":
             return gensim.models.KeyedVectors.load_word2vec_format(self.model_path, binary=True)
-        else:
+        elif self.type == 'mssa':
             return gensim.models.KeyedVectors.load(self.model_path)
+        elif self.type == "glove":
+            return self.get_glove()
+        raise "\n\nwrong model type: " + self.type
+
+    def get_glove(self):
+        glove_file = self.model_path
+        tmp_file = get_tmpfile("test_word2vc.txt")
+        _ = glove2word2vec(glove_file, tmp_file)
+        return KeyedVectors.load_word2vec_format(tmp_file)
 
     def word2vec_simulation(self, value):
         return numpy.full(4, value)

@@ -25,7 +25,7 @@ class Main:
         # w2v = Word2VectorUtil(aggregator=command_line.aggregator, model_path=mo_foname, simulation=True)
         # ##############################################################################################################
 
-        w2v = Word2VectorUtil(aggregator=command_line.aggregator, model_path=mo_foname, binary=command_line.isBin)
+        w2v = Word2VectorUtil(aggregator=command_line.aggregator, model_path=mo_foname, type=command_line.type)
         preprocess = Preprocess()
         file_util = FileUtil()
         arff_util = ArffUtil()
@@ -50,10 +50,10 @@ class Main:
             files = file_util.get_files_path(folder)
             for file in files:
                 text = file_util.read(file)
-                if command_line.isBin:
-                    tokens = preprocess.clean(text)
-                else:
+                if command_line.type == "mssa":
                     tokens = text.split("\n")
+                else:
+                    tokens = preprocess.clean(text)
                 if len(tokens) == 0:
                     empty_doc += 1
                     continue  # empty document
