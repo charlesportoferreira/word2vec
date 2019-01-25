@@ -20,8 +20,8 @@
         --aggregator: 
           Select between sum or mean. Its set which way document vector will be generated
 
-        --binary: 
-          Optional parameter. Set true if you are using a binary model 
+        --type: 
+          Optional parameter. Select the type of model to use. Choices are: mssa, google, glove 
 
         --noheader: 
           Optinal parameter. Set true to just save the vectors 
