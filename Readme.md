@@ -37,7 +37,7 @@
           Optional parameter. Select the type of model to use. Choices are: model, bin, txt 
 
         --noheader: 
-          Optinal parameter. Set true to just save the vectors 
+          Optinal parameter. Set True to save the vectors without header
 
         --preprocess:
-          Set True to apply word tokenzation otherwise it will assume each row has one word
+          Set True to apply word tokenization. Otherwise it will assume each row has one word
