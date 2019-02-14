@@ -14,12 +14,12 @@ class Word2VectorUtil:
     number_features = 0
     type = None
 
-    def __init__(self, aggregator, model_path, type='mssa', simulation=False, simulation_value=1):
+    def __init__(self, aggregator, model_path, model_type='model', simulation=False, simulation_value=1):
         self.simulation = simulation
         self.aggregator = aggregator
         self.simulation_value = simulation_value
         self.model_path = model_path
-        self.type = type
+        self.type = model_type
         if not self.simulation:
             print("loading w2v model...")
             self.model = self.load_model()
@@ -27,11 +27,11 @@ class Word2VectorUtil:
             self.number_features = self.model.vector_size
 
     def load_model(self):
-        if self.type == "google":
+        if self.type == "bin":
             return gensim.models.KeyedVectors.load_word2vec_format(self.model_path, binary=True)
-        elif self.type == 'mssa':
+        elif self.type == 'model':
             return gensim.models.KeyedVectors.load(self.model_path)
-        elif self.type == "glove":
+        elif self.type == "txt":
             return self.get_glove()
         raise "\n\nwrong model type: " + self.type
 

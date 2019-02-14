@@ -17,7 +17,7 @@ class FileUtil:
         return text
 
     def get_files_path(self, folder_name):
-        current = folder_name + "/*.txt"
+        current = folder_name + os.sep + "*.txt"
         files = glob.glob(current)
         return files
 
@@ -39,14 +39,14 @@ class FileUtil:
         return labels
 
     def get_label(self, folder_path):
-        data = folder_path.split("/")
+        data = folder_path.split(os.sep)
         return data[len(data) - 1]
 
     def count_files(self, folder):
         return sum([len(files) for r, d, files in os.walk(folder)])
 
     def get_model_name(self, model_path):
-        data = model_path.split("/")
+        data = model_path.split(os.sep)
         return data[len(data) - 1]
 
 

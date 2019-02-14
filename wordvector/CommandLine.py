@@ -8,6 +8,7 @@ class CLWord2Vec:
     aggregator = None
     isBin = False
     noHeader = False
+    preprocess = False
 
     def __init__(self):
         parser = self.define_parser_parameters()
@@ -19,6 +20,7 @@ class CLWord2Vec:
         self.model_folder = args.mod
         self.type = args.type
         self.noHeader = args.nohe
+        self.preprocess = args.pre
 
     def define_parser_parameters(self):
         parser = argparse.ArgumentParser(description="main - convert raw dataset into arff with word2vec features")
@@ -31,7 +33,10 @@ class CLWord2Vec:
         parser.add_argument('--aggregator', type=str, action='store', dest='agg', metavar='<value>', required=True,
                             help='type of aggregator to use', choices=["sum", "mean"])
         parser.add_argument('--type', type=str, action='store', dest='type', metavar='<value>', required=True,
-                            help='Select the type of model to load', choices=["mssa", "google", "glove"], default=False)
+                            help='Select the type of model to load', choices=["model", "bin", "txt"], default=False)
         parser.add_argument('--noheader', type=bool, action='store', dest='nohe', metavar='<value>', required=False,
-                            help='set False to remove the arff header', default=False)
+                            help='set True to remove the arff header', default=False)
+        parser.add_argument('--preprocess', type=bool, action='store', dest='pre', metavar='<value>', required=True,
+                            help='set True to apply word tokenization otherwise it will assume each row has one word',
+                            default=False)
         return parser
