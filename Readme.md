@@ -30,14 +30,17 @@
         --model: 
           Path to the word2vec trained model
 
-        --aggregator: 
-          Select between sum or mean. Its set which way document vector will be generated
-
         --type: 
-          Optional parameter. Select the type of model to use. Choices are: model, bin, txt 
+          Select the type of model to use. Choices are: model, bin, txt 
 
+        --aggregator: 
+          [Optional parameter] Select between sum or mean. Its set which way document vector will be generated
+          Default = mean
+        
         --noheader: 
-          Optinal parameter. Set True to save the vectors without header
+          [Optinal parameter] Set True to save the vectors without header
+          Default = False
 
         --preprocess:
-          Set True to apply word tokenization. Otherwise it will assume each row has one word
+          [Optional parameter] Set True to apply word tokenization. Otherwise it will assume each row has one word
+          Default = False
