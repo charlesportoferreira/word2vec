@@ -9,7 +9,9 @@
   Options:
 
         --input: 
-          Path to the folder with the raw txt files
+          Relative path from your current folder to the to the folder with the 
+          raw txt files.
+
           The dataset must follow this tree structure:
 
           dataset_folder:
@@ -28,13 +30,14 @@
           Name of the arff file that will be generated
 
         --model: 
-          Path to the word2vec trained model
+          Relative path from your current folder to the word2vec trained model
 
         --type: 
           Select the type of model to use. Choices are: model, bin, txt 
 
         --aggregator: 
-          [Optional parameter] Select between sum or mean. Its set which way document vector will be generated
+          [Optional parameter] Select between sum or mean. 
+          Its set which way document vector will be generated
           Default = mean
         
         --noheader: 
@@ -42,5 +45,6 @@
           Default = False
 
         --preprocess:
-          [Optional parameter] Set True to apply word tokenization. Otherwise it will assume each row has one word
+          [Optional parameter] Set True to apply word tokenization. 
+          Otherwise it will assume each row has one word.
           Default = False
