@@ -9,7 +9,7 @@
   Options:
 
         --input: 
-          Relative path from your current folder to the to the folder with the 
+          Relative path from your current folder to the folder with the 
           raw txt files.
 
           The dataset must follow this tree structure:
