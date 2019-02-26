@@ -23,20 +23,38 @@ class CLWord2Vec:
         self.preprocess = args.pre
 
     def define_parser_parameters(self):
-        parser = argparse.ArgumentParser(description="main - convert raw dataset into arff with word2vec features")
-        parser.add_argument('--input', type=str, action='store', dest='inf', metavar='<folder>', required=True,
-                            help='relative path from your current folder to the destination document folders')
-        parser.add_argument('--output', type=str, action='store', dest='ouf', metavar='<file>', required=True,
-                            help='name of the arff file')
-        parser.add_argument('--model', type=str, action='store', dest='mod', metavar='<folder>', required=True,
-                            help='trained word embeddings model')
-        parser.add_argument('--aggregator', type=str, action='store', dest='agg', metavar='<value>', required=False,
-                            help='type of aggregator to use', choices=["sum", "mean"], default="mean")
-        parser.add_argument('--type', type=str, action='store', dest='type', metavar='<value>', required=True,
-                            help='select the type of model to load', choices=["model", "bin", "txt"], default=False)
-        parser.add_argument('--noheader', type=bool, action='store', dest='nohe', metavar='<value>', required=False,
-                            help='set True to remove the arff header', default=False)
-        parser.add_argument('--preprocess', type=bool, action='store', dest='pre', metavar='<value>', required=False,
-                            help='set True to apply word tokenization otherwise it will assume each row has one word',
+        parser = argparse.ArgumentParser(description="Convert plain text documents into word embeddings")
+
+        parser.add_argument('--aggregator', '-a', type=str, action='store', dest='agg',
+                            required=False, choices=["sum", "mean"], default="mean",
+                            help='type of aggregator to use  (default: %(default)s)')
+
+        parser.add_argument('--noheader', '-n', type=bool, action='store', dest='nohe',
+                            required=False, default=False, choices=[True, False],
+                            help='set True to remove the arff header  (default: %(default)s)')
+
+        parser.add_argument('--preprocess', '-p', type=bool, action='store', dest='pre',
+                            required=False, choices=[True, False],
+                            help='set True to apply word tokenization otherwise it will assume each row has one word '
+                                 ' (default: %(default)s)',
                             default=False)
+
+        required_args = parser.add_argument_group('required arguments')
+
+        required_args.add_argument('--input', '-i', type=str, action='store', dest='inf', required=True,
+                                   metavar="<path>",
+                                   help='relative path from your current folder to the destination document folders')
+
+        required_args.add_argument('--output', '-o', type=str, action='store', dest='ouf', metavar="<file_name>",
+                                   required=True,
+                                   help='name of the output file')
+
+        required_args.add_argument('--model', '-m', type=str, action='store', dest='mod', required=True,
+                                   metavar="<path>",
+                                   help='relative path from your current folder to the trained word embedding model')
+
+        required_args.add_argument('--type', '-t', type=str, action='store', dest='type', required=True,
+                                   choices=["mssa", "google", "glove", "fasttext", "elmo"],
+                                   help='select the type of model to load')
+
         return parser

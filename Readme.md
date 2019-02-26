@@ -8,7 +8,10 @@
 
   Options:
 
-        --input: 
+        --help, -h:
+          help instructions
+
+        --input, -i: 
           Relative path from your current folder to the folder with the 
           raw txt files.
 
@@ -26,25 +29,27 @@
                      |---> file2.txt
                      |---> filen.txt
 
-        --output: 
+        --output, -o: 
           Name of the arff file that will be generated
 
-        --model: 
+        --model, -m: 
           Relative path from your current folder to the word2vec trained model
 
-        --type: 
-          Select the type of model to use. Choices are: model, bin, txt 
+        --type, -t: 
+          Select the type of model to use. Choices are: mssa, glove, google, fasttext, elmo 
 
-        --aggregator: 
+        --aggregator, -a: 
           [Optional parameter] Select between sum or mean. 
           Its set which way document vector will be generated
           Default = mean
         
-        --noheader: 
+        --noheader, -n: 
           [Optinal parameter] Set True to save the vectors without header
           Default = False
 
-        --preprocess:
+        --preprocess, -p:
           [Optional parameter] Set True to apply word tokenization. 
           Otherwise it will assume each row has one word.
           Default = False
+
+        
