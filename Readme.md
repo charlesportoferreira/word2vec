@@ -44,7 +44,7 @@
           Default = mean
         
         --noheader, -n: 
-          [Optinal parameter] Set True to save the vectors without header
+          [Optional parameter] Set True to save the vectors without header
           Default = False
 
         --preprocess, -p:
