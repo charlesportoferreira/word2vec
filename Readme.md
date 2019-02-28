@@ -36,7 +36,7 @@
           Relative path from your current folder to the word2vec trained model
 
         --type, -t: 
-          Select the type of model to use. Choices are: mssa, glove, google, fasttext, elmo 
+          Select the type of model to use. Choices are: mssa, glove, google, fasttext, elmo, use 
 
         --aggregator, -a: 
           [Optional parameter] Select between sum or mean. 

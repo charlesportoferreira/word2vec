@@ -1,6 +1,5 @@
 import gensim
 import numpy
-from allennlp.commands.elmo import ElmoEmbedder
 from gensim.models import KeyedVectors
 from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import get_tmpfile
@@ -33,7 +32,7 @@ class Word2VectorUtil:
         if self.type == "elmo":
             return 1024  # TODO: get proper number of features from Elmo
         elif self.type == "use":
-            pass
+            return 512  # TODO: get proper number of features from use
         else:
             return self.model.vector_size
 
@@ -52,9 +51,6 @@ class Word2VectorUtil:
             return self.get_use_model()
         raise "\n\nwrong model type: " + self.type
 
-    def get_use_model(self):
-        pass
-
     def get_fasttest_model(self):
         return KeyedVectors.load_word2vec_format(self.model_path, binary=False)
 
@@ -71,13 +67,17 @@ class Word2VectorUtil:
         return KeyedVectors.load_word2vec_format(tmp_file)
 
     def get_elmo_model(self):
-        model = self.get_model('https://tfhub.dev/google/elmo/2')  # initialize module
-        return model
+        model_path = 'https://tfhub.dev/google/elmo/2'
+        return self.get_tensorflow_model(model_path)
 
-    def get_model(self, elmo_module):
+    def get_use_model(self):
+        model_path = "https://tfhub.dev/google/universal-sentence-encoder-large/3"  # newer module
+        return self.get_tensorflow_model(model_path)
+
+    def get_tensorflow_model(self, model_path):
         with tf.Graph().as_default():
             sentences = tf.placeholder(tf.string)
-            embed = hub.Module(elmo_module)
+            embed = hub.Module(model_path)
             embeddings = embed(sentences)
             session = tf.train.MonitoredSession()
         return lambda x: session.run(embeddings, {sentences: x})
@@ -86,28 +86,30 @@ class Word2VectorUtil:
         return numpy.full(4, value)
 
     def get_list_vectors(self, tokens):
-        list_vec = []
         if self.type == "elmo":
-            vectors = self.model(tokens)
-            for i in range(0, vectors.shape[0] - 1):
-                list_vec.append(vectors[i])
-            return list_vec
+            return self.get_tensorflow_vectors(tokens)
 
+        if self.type == "use":
+            return self.get_tensorflow_vectors(tokens)
+
+        return self.get_gensim_vectors(tokens)
+
+    def get_gensim_vectors(self, tokens):
+        list_vec = []
         for token in tokens:
             if self.simulation:
                 list_vec.append(self.word2vec_simulation(self.simulation_value))
             else:
                 try:
-                    if self.type == "use":
-                        pass
-                    else:
-                        list_vec.append(self.model.word_vec(token))
-                        # print("vector found <" + token+ ">")
+                    list_vec.append(self.model.word_vec(token))
+                    # print("vector found <" + token+ ">")
                 except KeyError:
                     # print("vector not found: <" + token + ">")
                     continue  # do nothing
-
         return list_vec
+
+    def get_tensorflow_vectors(self, tokens):
+        return self.model(tokens)
 
     def get_doc_vector(self, tokens):
         list_vec = self.get_list_vectors(tokens)
