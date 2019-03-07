@@ -14,13 +14,9 @@ from wordvector.Word2vec import Word2VectorUtil
 
 
 class Main:
-    # TODO: check if input folder exist or has any document (fixed)
-    # TODO: implement preprocessing to apply bag of words with mssa annotated corpora (do not need)
-    # TODO: bow with 300d (fixed)
     # TODO: check if we are working with the wrong model
     # TODO: add an option to give a full path for input and model
-    # TODO: proper show help with optional and required parameters
-    # https://stackoverflow.com/questions/24180527/argparse-required-arguments-listed-under-optional-arguments
+
 
     def main(self):
         command_line = CLWord2Vec()
