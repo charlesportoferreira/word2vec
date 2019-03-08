@@ -60,4 +60,4 @@ class CLWord2Vec:
         return parser
 
     def str2bool(self, str_value):
-        return str == "True"
+        return str_value == "True"
