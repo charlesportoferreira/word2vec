@@ -19,8 +19,8 @@ class CLWord2Vec:
         self.aggregator = args.agg
         self.model_folder = args.mod
         self.type = args.type
-        self.noHeader = args.nohe
-        self.preprocess = args.pre
+        self.noHeader = self.str2bool(args.nohe)
+        self.preprocess = self.str2bool(args.pre)
 
     def define_parser_parameters(self):
         parser = argparse.ArgumentParser(description="Convert plain text documents into word embeddings")
@@ -29,14 +29,14 @@ class CLWord2Vec:
                             required=False, choices=["sum", "mean"], default="mean",
                             help='type of aggregator to use  (default: %(default)s)')
 
-        parser.add_argument('--noheader', '-n', type=bool, action='store', dest='nohe',
-                            required=False, default=False, choices=[True, False],
+        parser.add_argument('--noheader', '-n', type=str, action='store', dest='nohe',
+                            required=False, default=False, choices=['True', 'False'],
                             help='set True to remove the arff header  (default: %(default)s)')
 
-        parser.add_argument('--preprocess', '-p', type=bool, action='store', dest='pre',
-                            required=False, choices=[True, False],
-                            help='set True to apply word tokenization otherwise it will assume each row has one word '
-                                 ' (default: %(default)s)',
+        parser.add_argument('--preprocess', '-p', type=str, action='store', dest='pre',
+                            required=False, choices=['True', 'False'],
+                            help='set True to apply word tokenization, stopword removal and lowercase. '
+                                 'Otherwise it will assume each row has one word (default: %(default)s)',
                             default=False)
 
         required_args = parser.add_argument_group('required arguments')
@@ -58,3 +58,6 @@ class CLWord2Vec:
                                    help='select the type of model to load')
 
         return parser
+
+    def str2bool(self, str_value):
+        return str == "True"
