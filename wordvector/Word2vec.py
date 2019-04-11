@@ -23,7 +23,7 @@ class Word2VectorUtil:
         self.model_path = model_path
         self.type = model_type
         if not self.simulation:
-            print("loading w2v model...")
+            print("loading embedding model...")
             self.model = self.load_model()
             print('done!\nword2vec-size:\t', self.get_number_features())
             self.number_features = self.get_number_features()
@@ -116,7 +116,10 @@ class Word2VectorUtil:
     def get_tensorflow_vectors(self, tokens):
         return self.model(tokens)
 
-    def get_doc_vector(self, tokens):
+    def get_document_vector(self, tokens):
+        if self.type == "doc2vec":
+            return self.model.infer_vector(tokens, alpha=0.0001, min_alpha=0.000001, epochs=300)
+
         list_vec = self.get_list_vectors(tokens)
         if len(list_vec) == 0:
             return []  # no vector found

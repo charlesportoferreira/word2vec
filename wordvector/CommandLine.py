@@ -62,7 +62,7 @@ class CLWord2Vec:
                                    help='relative path from your current folder to the trained word embedding model')
 
         required_args.add_argument('--type', '-t', type=str, action='store', dest='type', required=True,
-                                   choices=["mssa", "google", "glove", "fasttext", "elmo", "use"],
+                                   choices=["mssa", "google", "glove", "fasttext", "elmo", "use", "doc2vec"],
                                    help='select the type of model to load')
 
         return parser

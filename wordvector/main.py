@@ -16,6 +16,7 @@ from wordvector.Word2vec import Word2VectorUtil
 class Main:
     # TODO: check if we are working with the wrong model
     # TODO: add an option to give a full path for input and model
+    # TODO: refactor code. Now this tool can work with doc2vec so it is not only w2v
 
     def main(self):
         command_line = CLWord2Vec()
@@ -65,12 +66,12 @@ class Main:
                 if len(tokens) == 0:
                     empty_doc += 1
                     continue  # empty document
-                doc_vector = w2v.get_doc_vector(tokens)  # create a document vector
-                if len(doc_vector) == 0:
+                document_vector = w2v.get_document_vector(tokens)  # create a document vector
+                if len(document_vector) == 0:
                     doc_without_vector += 1
                     continue  # no vector found to this document
                 doc_vector_counter += 1
-                instance = arff_util.get_instance(doc_vector, label)
+                instance = arff_util.get_instance(document_vector, label)
                 f.write(instance)
                 count += 1
                 percentage = str(round(100 * count / number_files))
