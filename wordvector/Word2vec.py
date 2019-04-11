@@ -49,7 +49,12 @@ class Word2VectorUtil:
             return self.get_elmo_model()
         elif self.type == "use":
             return self.get_use_model()
+        elif self.type == "doc2vec":
+            return self.get_doc2vec()
         raise "\n\nwrong model type: " + self.type
+
+    def get_doc2vec(self):
+        return gensim.models.Doc2Vec.load(self.model_path)
 
     def get_fasttest_model(self):
         return KeyedVectors.load_word2vec_format(self.model_path, binary=False)

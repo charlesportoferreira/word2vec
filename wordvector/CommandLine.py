@@ -9,6 +9,7 @@ class CLWord2Vec:
     isBin = False
     noHeader = False
     preprocess = False
+    doc2vec = False
 
     def __init__(self):
         parser = self.define_parser_parameters()
@@ -21,6 +22,7 @@ class CLWord2Vec:
         self.type = args.type
         self.noHeader = self.str2bool(args.nohe)
         self.preprocess = self.str2bool(args.pre)
+        self.doc2vec = self.str2bool(args.doc)
 
     def define_parser_parameters(self):
         parser = argparse.ArgumentParser(description="Convert plain text documents into word embeddings")
@@ -37,6 +39,12 @@ class CLWord2Vec:
                             required=False, choices=['True', 'False'],
                             help='set True to apply word tokenization, stopword removal and lowercase. '
                                  'Otherwise it will assume each row has one word (default: %(default)s)',
+                            default=False)
+
+        parser.add_argument('--doc', '-d', type=str, action='store', dest='doc',
+                            required=False, choices=['True', 'False'],
+                            help='set True to feed the model with a single string containing all words. '
+                                 '(default: %(default)s)',
                             default=False)
 
         required_args = parser.add_argument_group('required arguments')

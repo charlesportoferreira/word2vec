@@ -17,7 +17,6 @@ class Main:
     # TODO: check if we are working with the wrong model
     # TODO: add an option to give a full path for input and model
 
-
     def main(self):
         command_line = CLWord2Vec()
 
@@ -58,6 +57,9 @@ class Main:
                 text = file_util.read(file)
                 if command_line.preprocess:
                     tokens = preprocess.clean(text)
+                    if command_line.doc2vec:
+                        list_single_string = [" ".join(tokens)]
+                        tokens = list_single_string
                 else:
                     tokens = text.split("\n")
                 if len(tokens) == 0:

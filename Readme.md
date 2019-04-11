@@ -51,5 +51,9 @@
           [Optional parameter] Set True to apply word tokenization. 
           Otherwise it will assume each row has one word.
           Default = False
+          
+        --doc, -d
+          [Optional parameter] Set True to feed the model with
+          all words as a single string
 
         
