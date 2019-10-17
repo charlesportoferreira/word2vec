@@ -25,7 +25,7 @@ There are four mandatory input parameters:
     
     
 It is necessary to inform the type of the embedding model because each model have 
-a different strategy to access its data. This strategy depends on the model file
+a different strategy to access its vector. This strategy depends on the model file
 file format and the support library used to handle the model
 
 ### Example of how to run:
