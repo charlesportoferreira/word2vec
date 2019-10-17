@@ -37,4 +37,7 @@ compatible file: One need to add the flag -ar and provide the value True
 
 *example with google embedding
     
-     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google -ah True   
+     python3 wordvector/main.py -i datasets/toydata -o google.arff -m models/google_model.bin -t google -ah True   
+     
+ Basically, the output file will have a header and features description compatible with
+ the arff format.
