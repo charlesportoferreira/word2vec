@@ -45,7 +45,7 @@ file format and the support library used to handle the model
 
     
  
-####Generating a Weka compatible file
+### Generating a Weka compatible file
 
 One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
 In this case, it is necessary to set a flag that allows converting the output file into a Weka
