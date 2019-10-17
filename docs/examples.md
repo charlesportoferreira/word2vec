@@ -29,6 +29,12 @@ There are three mandatory input parameters:
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
  
+### Generating a Weka compatible file
 
+One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/)
+In this case we have a flag that allow to convert the output file into a weka
+compatible file: One need to add the flag -ar and provide the value True
+
+*example with google embedding
     
-   
+     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google -ah True   
