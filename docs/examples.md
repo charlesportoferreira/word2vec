@@ -24,8 +24,8 @@ There are three mandatory input parameters:
 
 ### Example of how to run:
 
-google 
+google model
 
-    python 3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google.bin -t google 
+    python 3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
    
