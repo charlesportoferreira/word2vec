@@ -1,14 +1,14 @@
 Currently, this tool can convert raw documents into vectors
 using the following embedding model:
 
-* google word2vec[link to the model]
-* fasttext [link to the model]
-* glove[link to the model]
-* elmo[link to the model]
-* use[link to the model]
-* mssa[link to the model]
-* flexible lexical chain[link to the model]
-* fixed lexical chain[link to the model]
+* google word2vec [link to the model][link to the paper]
+* fastText [link to the model][link to the paper]
+* Glove [link to the model][link to the paper]
+* Elmo [link to the model][link to the paper]
+* USE [link to the model][link to the paper]
+* Mssa [link to the model][link to the paper]
+* flexible lexical chain [link to the model][link to the paper]
+* fixed lexical chain [link to the model][link to the paper]
 
 
 Some of them need to be called with specific parameters, so we are proving
