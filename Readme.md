@@ -16,7 +16,7 @@ use on machine learning tasks as document classification.
 
 [usage examples](docs/examples.md)
 
-[TL_DR]\t 
+[TL_DR]\
 **python3 wordvector/main.py [options]**
 
   Options:
