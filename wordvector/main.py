@@ -32,17 +32,19 @@ class Main:
         file_util = FileUtil()
         arff_util = ArffUtil()
 
-        folders = file_util.get_folders(in_foname)  # reading class folders
+        folders = file_util.get_folders(in_foname)  # reading folder names
+        folders = sorted(folders)  # guarantee read folders same order across OS
         self.check_folders_exist(folders, in_foname)
 
-        labels = file_util.get_labels(folders)  # extracting labels
+        labels = file_util.get_labels(folders)  # extracting labels from folder name
         w2v = Word2VectorUtil(aggregator=command_line.aggregator, model_path=mo_foname, model_type=command_line.type)
         number_features = w2v.number_features
-        relation_name = file_util.get_model_name(command_line.model_folder)
-        header = arff_util.get_header(number_features, labels, relation_name)
 
-        f = open(command_line.output_arff, 'w', errors="ignore")
-        if not command_line.noHeader:
+        f = open(command_line.output_file, 'w', errors="ignore")
+
+        if command_line.arff_header:
+            relation_name = file_util.get_model_name(command_line.model_folder)
+            header = arff_util.get_header(number_features, labels, relation_name)
             f.write(header)
 
         empty_doc = 0
@@ -54,6 +56,7 @@ class Main:
             number_files = file_util.count_files(folder)
             count = 0
             files = file_util.get_files_path(folder)
+            files = sorted(files)  # guarantee read files same order across OS
             for file in files:
                 text = file_util.read(file)
                 if command_line.preprocess:

@@ -3,18 +3,17 @@ import numpy
 from gensim.models import KeyedVectors
 from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import get_tmpfile
-import tensorflow as tf
-import tensorflow_hub as hub
+import warnings
+
+
+# ignore future warnings from tensorflow library
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore", category=FutureWarning)
+    import tensorflow as tf
+    import tensorflow_hub as hub
 
 
 class Word2VectorUtil:
-    model = None
-    simulation = False
-    aggregator = "mean"
-    simulation_value = 1
-    model_path = None
-    number_features = 0
-    type = None
 
     def __init__(self, aggregator, model_path, model_type='model', simulation=False, simulation_value=1):
         self.simulation = simulation
@@ -25,7 +24,7 @@ class Word2VectorUtil:
         if not self.simulation:
             print("loading embedding model...")
             self.model = self.load_model()
-            print('done!\nword2vec-size:\t', self.get_number_features())
+            print('done!\nmodel-size:\t', self.get_number_features())
             self.number_features = self.get_number_features()
 
     def get_number_features(self):

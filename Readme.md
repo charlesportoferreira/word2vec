@@ -1,9 +1,24 @@
-# Word2Vector to arff
+# Convert text documents into numerical vectors
 ---
-## Read text raw files, apply word2vec and generate a dataset in the arff format 
+## Read the whole corpus and generate embedded vectors using word2vec/doc2vec pre-trained models
 ---
+
+This tool reads a dataset composed of labeled text documents and generate numerical vectors using pre-trained models.
+The primary goal of this tool is to provide a quick method to convert text documents into numerical matrix to 
+use on machine learning tasks as document classification.
+
+### How to Install
+
+[installation guide](docs/Install.md)
+
+To run this code you will need python 3.
+We recommend to install a python virtual environment to run this code.
+
 ### To use type: 
 
+[usage examples](docs/examples.md)
+
+[TL_DR]\
 **python3 wordvector/main.py [options]**
 
   Options:

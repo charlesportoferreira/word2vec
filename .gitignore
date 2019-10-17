@@ -1,0 +1,15 @@
+# python environment folder
+/env
+
+
+# python cache
+wordvector/__pycache__/
+
+# pycharm auxiliary files
+.pydevproject
+.project
+.idea
+
+
+/models
+/datasets/scygenes
