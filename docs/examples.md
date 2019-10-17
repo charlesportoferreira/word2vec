@@ -26,6 +26,7 @@ There are three mandatory input parameters:
 
 * google model
 
+
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
  
@@ -40,6 +41,7 @@ compatible format
     -ar --> set True to enable arff compatibility 
 
 * example with google embedding
+    
     
      python3 wordvector/main.py -i datasets/toydata -o google.arff -m models/google_model.bin -t google -ah True   
      
