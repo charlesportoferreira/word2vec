@@ -26,6 +26,6 @@ There are three mandatory input parameters:
 
 google model
 
-    python 3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
+    python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
    
