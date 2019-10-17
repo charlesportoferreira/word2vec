@@ -24,7 +24,7 @@ There are three mandatory input parameters:
 
 ### Example of how to run:
 
-* google model
+*google model
 
 
 
@@ -42,7 +42,7 @@ compatible format
  
     -ar --> set True to enable arff compatibility 
 
-* example with google embedding
+*example with google embedding
     
     
     
