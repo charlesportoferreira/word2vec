@@ -30,13 +30,22 @@ file format and the support library used to handle the model
 
 ### Example of how to run:
 
-*google model
+##### google embedding
 
 
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
+##### glove embedding
+
+
+
+##### fasttext embedding
+
+
+
+    
  
-### Generating a Weka compatible file
+####Generating a Weka compatible file
 
 One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
 In this case, it is necessary to set a flag that allows converting the output file into a Weka
@@ -46,7 +55,7 @@ compatible format
  
     -ar --> set True to enable arff compatibility 
 
-*example with google embedding
+##### example with google embedding
     
     
      python3 wordvector/main.py -i datasets/toydata -o google.arff -m models/google_model.bin -t google -ah True   
