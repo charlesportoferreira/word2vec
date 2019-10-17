@@ -1,7 +1,7 @@
 ## How to install
 
 ### Requirements
-You will need python 3.6 or later on your machine to run this code.
+You will need [python](https://www.python.org/) 3.6 or later on your machine to run this code.
 To check your python version type on a terminal:
 
        python3 --version
