@@ -20,7 +20,7 @@ There are three mandatory input parameters:
 
 -i -> a relative path to the corpus folder\
 -o -> the name of the file that will be generated\
--m -> a relative path to the embedding model\
+-m -> a relative path to the embedding model
 
 ### Example of how to run:
 
