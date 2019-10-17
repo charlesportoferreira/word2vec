@@ -27,15 +27,13 @@ There are three mandatory input parameters:
 *google model
 
 
-
-
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
  
 ### Generating a Weka compatible file
 
 One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
-In this case we have a flag that allow to convert the output file into a Weka
+In this case it is necessary to set a flag that allows to convert the output file into a Weka
 compatible format
  
  There is one parameter to add 
@@ -45,9 +43,7 @@ compatible format
 *example with google embedding
     
     
-    
-    
      python3 wordvector/main.py -i datasets/toydata -o google.arff -m models/google_model.bin -t google -ah True   
      
- Basically, the output file will have a header and features description compatible with
+ Basically, the output file will have a header and attribute description compatible with
  the arff format.
