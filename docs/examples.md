@@ -18,24 +18,28 @@ along the examples.
 
 There are three mandatory input parameters:
 
--i -> a relative path to the corpus folder\
--o -> the name of the file that will be generated\
--m -> a relative path to the embedding model
+    -i --> a relative path to the corpus folder
+    -o --> the name of the file that will be generated
+    -m --> a relative path to the embedding model
 
 ### Example of how to run:
 
-*google model
+* google model
 
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
  
 ### Generating a Weka compatible file
 
-One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/)
-In this case we have a flag that allow to convert the output file into a weka
-compatible file: One need to add the flag -ar and provide the value True
+One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
+In this case we have a flag that allow to convert the output file into a Weka
+compatible format
+ 
+ There is one parameter to add 
+ 
+    -ar --> set True to enable arff compatibility 
 
-*example with google embedding
+* example with google embedding
     
      python3 wordvector/main.py -i datasets/toydata -o google.arff -m models/google_model.bin -t google -ah True   
      
