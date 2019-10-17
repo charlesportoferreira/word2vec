@@ -1,6 +1,6 @@
 ## How to install
 
-### requirements
+### Requirements
 You will need python 3.6 or later on your machine to run this code.
 To check your python version type on a terminal:
 
@@ -16,7 +16,7 @@ To install python libraries onw may need a python installing package.
 
 Download this repository to your local machine or clone it with git clone.
 
-## project folder structure:
+## Project folder structure:
 
 After download it go to the respect folder. You should have a project folder with the following structure:
 
