@@ -11,10 +11,10 @@ You should have an output similar to this:
 
         Python 3.6.8
         
-You will also need a python installing package. We recommend to use 
-[pip](https://pypi.org/project/pip/).
+To install python libraries onw may need a python installing package.
+ We suggest to use [pip](https://pypi.org/project/pip/).
 
-Download this repository to your machine or clone it.
+Download this repository to your local machine or clone it with git clone.
 
 ## project folder structure:
 
@@ -30,10 +30,29 @@ After download it go to the respect folder. You should have a project folder wit
         |-----wordvector
         
        
-### Datasets folder
-You will keep your corpus inside the datasets folder.
+### Dataset folder
+It is necessary to keep your corpus inside the dataset folder.
 They need to be organized in a tree format. There is already a toydata example
  inside this folder. 
+ 
+    toydata
+       |---book
+       |     |----> d1.txt
+       |     |----> d2.txt
+       |     |----> d3.txt
+       |
+       |---paper
+             |----> d4.txt
+             |----> d5.txt
+             |----> d6.txt
+            
+            
+This corpus is composed of 6 texts documents.
+ Each document belongs to one of two classes: book or paper
+
+After running the code one will end up with a file composed of 
+6 vectors. One vector to each document. The numerical values will be separated by
+commas and the last value is the label of the document
 
 ### Models folder
 In this folder you need to keep your embeddings models
