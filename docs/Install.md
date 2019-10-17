@@ -40,12 +40,11 @@ toydata example to help.
 ### models folder
 In this folder you need to keep your embeddings models
 
----
 It is necessary to keep your datasets and models in the correct folder because 
 we are using a relative path to find theses files. So 
 if you put them in a parent folder from this project
 it may not be able to find these files.
----
+
 
 Libraries:
 

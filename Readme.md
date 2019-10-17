@@ -11,14 +11,12 @@ use on machine learning tasks as document classification.
 
 [installation guide](docs/Install.md)
 
-To run this code you will need python 3.
-We recommend to install a python virtual environment to run this code.
 
 ### To use type: 
 
 [usage examples](docs/examples.md)
 
-[TL_DR]\
+[TL_DR]\t 
 **python3 wordvector/main.py [options]**
 
   Options:
