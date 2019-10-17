@@ -1,4 +1,4 @@
-Currently, this tool can convert raw document into vectors
+Currently, this tool can convert raw documents into vectors
 using the following embedding model:
 
 * google word2vec[link to the model]
@@ -11,9 +11,9 @@ using the following embedding model:
 * fixed lexical chain[link to the model]
 
 
-Some of them needs to be called with specific parameters, so we are proving
+Some of them need to be called with specific parameters, so we are proving
 examples of how to run each embedding model and we will explain these flag
-along the examples.
+along with the examples.
 
 
 There are three mandatory input parameters:
@@ -33,10 +33,10 @@ There are three mandatory input parameters:
 ### Generating a Weka compatible file
 
 One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
-In this case it is necessary to set a flag that allows to convert the output file into a Weka
+In this case, it is necessary to set a flag that allows converting the output file into a Weka
 compatible format
  
- There is one parameter to add 
+ There is one parameter to add :
  
     -ar --> set True to enable arff compatibility 
 
