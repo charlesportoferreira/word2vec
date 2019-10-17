@@ -16,11 +16,17 @@ examples of how to run each embedding model and we will explain these flag
 along with the examples.
 
 
-There are three mandatory input parameters:
+There are four mandatory input parameters:
 
     -i --> a relative path to the corpus folder
     -o --> the name of the file that will be generated
     -m --> a relative path to the embedding model
+    -t --> type of word embedding model
+    
+    
+It is necessary to inform the type of the embedding model because each model have 
+a different strategy to access its data. This strategy depends on the model file
+file format and the support library used to handle the model
 
 ### Example of how to run:
 

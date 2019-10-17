@@ -24,7 +24,7 @@ After download, go to the respected folder. You should have a project folder wit
         |
         |-----main.py
         |-----Readme.md
-        |-----datasets
+        |-----dataset
         |-----models
         |-----test
         |-----wordvector
