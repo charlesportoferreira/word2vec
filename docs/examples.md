@@ -3,12 +3,17 @@
 Currently, this tool can convert raw documents into vectors
 using the following embedding model:
 
-* Google word2vec [link to the model][link to the paper]
-* fastText [link to the model][link to the paper]
-* Glove [link to the model][link to the paper]
-* Elmo [link to the model][link to the paper]
-* USE [link to the paper]
-* MSSA [link to the paper]
+* Google word2vec: 
+[pre-trained model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit)
+([paper1](http://arxiv.org/pdf/1301.3781.pdf), [paper2](http://arxiv.org/pdf/1301.3781.pdf), [paper3](http://arxiv.org/pdf/1301.3781.pdf))
+* fastText: [pre-trained model](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M-subword.vec.zip)
+([paper](https://arxiv.org/abs/1712.09405))
+* Glove: [pre-trained model](http://nlp.stanford.edu/data/glove.6B.zip)
+([paper](https://nlp.stanford.edu/pubs/glove.pdf))
+* MSSA: [link to the model](https://deepblue.lib.umich.edu/data/downloads/1r66j1149?locale=en) 
+([paper](https://www.sciencedirect.com/science/article/pii/S0957417419304269))
+* ELMo: ([paper](https://arxiv.org/pdf/1802.05365))
+* USE: ([paper](https://arxiv.org/pdf/1803.11175))
 
 
 Some of them need to be called with specific parameters, so we are proving
