@@ -40,10 +40,12 @@ After executing you should have an output simliar to this one:
     done!
     model-size:	 300
     
-    processing folder: path_to_your_project/word2vec/dataset/toydata/book
+    processing folder: /home/charles/Documents/gitprojects/word2vec/dataset/toydata_parsed/book
     done 3 of 3 100%
-    processing folder: path_to_your_project/word2vec/dataset/toydata/paper
     
+    processing folder: /home/charles/Documents/gitprojects/word2vec/dataset/toydata_parsed/paper
+    done 3 of 3 100%
+
 ##### Glove embedding
 
     python3 wordvector/main.py -i datasets/toydata -o glove.vec -m models/glove_model.txt -t glove 

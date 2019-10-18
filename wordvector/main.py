@@ -78,6 +78,7 @@ class Main:
                 percentage = str(round(100 * count / number_files))
                 print("done " + str(count) + " of " + str(number_files) + " " + percentage + "%\r", end='')
 
+            print()
             self.check_folder_with_no_vectors(doc_vector_counter, label)
 
         self.check_empty_doc(empty_doc)
@@ -100,12 +101,14 @@ class Main:
 
     def check_folder_with_no_vectors(self, doc_vector_counter, label):
         if doc_vector_counter == 0:
+            print()
             print("-----------------------------------------------------------------------------------------------")
             print("no vectors found with this folder: " + label)
             print("-----------------------------------------------------------------------------------------------")
 
     def check_folders_exist(self, folders, in_foname):
         if not folders:
+            print()
             print("----------------------------------------------------------------------------------------------")
             print("not possible to find any folder at: " + in_foname)
             print("check if the path to the input folder is correct or the folder is empty")
