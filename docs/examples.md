@@ -36,7 +36,7 @@ file format and the support library used to handle the model
 
 ##### Google embedding
 
-    python3 wordvector/main.py -i dataset/toydata -o google.vec -m models/GoogleNews-vector-negative300.bin -t google 
+    python3 wordvector/main.py -i dataset/toydata -o google.vec -m models/GoogleNews-vectors-negative300.bin -t google 
     
 After executing you should have an output simliar to this one:
 
