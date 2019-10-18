@@ -1,4 +1,4 @@
-[back](Readme.md)
+[back](../Readme.md)
 
 ## How to install
 
@@ -108,4 +108,4 @@ To activate the virtual environment type:
     source env/bin/activate 
 
  
-[back](Readme.md)
+[back](../Readme.md)
