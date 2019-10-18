@@ -1,3 +1,5 @@
+[back](Readme.md)
+
 ## How to install
 
 ### Requirements
@@ -40,8 +42,8 @@ of them on your machine.
 * fastText [link to the model][link to the paper]
 * Glove [link to the model][link to the paper]
 * MSSA [link to the model][link to the paper]
-* Elmo [link to the model][link to the paper]
-* USE [link to the model][link to the paper]
+* Elmo [link to the paper]
+* USE [link to the paper]
 
 ### Download
 
@@ -106,5 +108,4 @@ To activate the virtual environment type:
     source env/bin/activate 
 
  
-
-
+[back](Readme.md)
