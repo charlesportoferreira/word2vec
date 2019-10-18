@@ -38,7 +38,8 @@ One may install these libraries using the [pip](https://pypi.org/project/pip/) t
 To extract vectors from documents we are using a few pre-trained model. It is necessary to have a copy
 of them on your machine.
 
-* Google word2vec [link to the model][link to the paper]
+* Google word2vec [model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit)
+[link to the paper](http://arxiv.org/pdf/1301.3781.pdf)
 * fastText [link to the model][link to the paper]
 * Glove [link to the model][link to the paper]
 * MSSA [link to the model][link to the paper]
