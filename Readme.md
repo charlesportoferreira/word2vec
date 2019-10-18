@@ -17,6 +17,9 @@ use on machine learning tasks as document classification.
 [usage examples](docs/examples.md)
 
 
+---
+### Overview
+
 **python3 wordvector/main.py [options]**
 
   Options:
