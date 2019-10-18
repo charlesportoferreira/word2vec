@@ -45,7 +45,7 @@ of them on your machine.
 ([paper](https://arxiv.org/abs/1712.09405))
 * Glove [pre-trained model](http://nlp.stanford.edu/data/glove.6B.zip)
 ([paper](https://nlp.stanford.edu/pubs/glove.pdf))
-* MSSA [link to the model]
+* MSSA [link to the model](https://deepblue.lib.umich.edu/data/downloads/1r66j1149?locale=en) 
 ([paper](https://www.sciencedirect.com/science/article/pii/S0957417419304269))
 * Elmo [link to the paper]
 * USE [link to the paper]
