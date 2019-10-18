@@ -48,7 +48,7 @@ of them on your machine.
 * MSSA [link to the model](https://deepblue.lib.umich.edu/data/downloads/1r66j1149?locale=en) 
 ([paper](https://www.sciencedirect.com/science/article/pii/S0957417419304269))
 * ELMo ([paper](https://arxiv.org/pdf/1802.05365))
-* USE [link to the paper]
+* USE ([paper](https://arxiv.org/pdf/1803.11175))
 
 ### Download
 
