@@ -49,7 +49,7 @@ of them on your machine.
 
 Download this repository to your local machine or clone it with git clone.
 
-![download](docs/repository.png)
+![download](repository.png)
 
 ### Project folder structure:
 
