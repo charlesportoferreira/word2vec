@@ -71,7 +71,7 @@ To run mssa embedding, type:
 
     python3 wordvector/main.py -i dataset/toydata_parsed/ -o toydata_mssa.vec  -m models/mssa.model -t mssa  -p False
     
-##### Elmo embedding
+##### ELMo embedding
 
 To run Elmo it is not necessary to provide a embedding model 
 because our tool will fetch it from the web. So, one may set
