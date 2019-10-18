@@ -61,8 +61,8 @@ After executing you should have an output simliar to this one:
 
 ##### MSSA embedding
 
-Mssa embedding model need a corpus properly parsed and preprocessed as 
-suggest by the original paper. We are also providing a toydata_parsed
+Mssa embedding model needs a corpus properly parsed and preprocessed as 
+suggested by the original paper. We are also providing a toydata_parsed
 with this format as example. 
 
 

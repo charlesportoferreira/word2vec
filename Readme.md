@@ -3,8 +3,8 @@
 ## Read the whole corpus and generate embedded vectors using word2vec/doc2vec pre-trained models
 ---
 
-This tool reads a dataset composed of labeled text documents and generate numerical vectors using pre-trained models.
-The primary goal of this tool is to provide a quick method to convert text documents into numerical matrix to 
+This tool reads a dataset composed of labeled text documents and generates numerical vectors using pre-trained models.
+The primary goal of this tool is to provide a quick method to convert text documents into a numerical matrix to 
 use on machine learning tasks as document classification.
 
 ### How to Install
