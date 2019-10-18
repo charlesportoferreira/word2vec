@@ -1,4 +1,4 @@
-[back](Readme.md)
+[back](../Readme.md)
 
 Currently, this tool can convert raw documents into vectors
 using the following embedding model:
