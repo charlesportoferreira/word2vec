@@ -7,8 +7,6 @@ using the following embedding model:
 * Elmo [link to the model][link to the paper]
 * USE [link to the model][link to the paper]
 * Mssa [link to the model][link to the paper]
-* flexible lexical chain [link to the model][link to the paper]
-* fixed lexical chain [link to the model][link to the paper]
 
 
 Some of them need to be called with specific parameters, so we are proving
@@ -32,17 +30,28 @@ file format and the support library used to handle the model
 
 ##### google embedding
 
-
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
 ##### glove embedding
 
-
+    python3 wordvector/main.py -i datasets/toydata -o glove.vec -m models/glove_model.txt -t glove 
 
 ##### fasttext embedding
 
+    python3 wordvector/main.py -i datasets/toydata -o fasttext.vec -m models/fasttext_model.txt -t fasttext 
 
+##### mssa embedding
 
+Mssa embedding model need a corpus properly parsed as 
+suggest by the original paper. We are also providing the same toydata
+with this format as example
+
+    python3 wordvector/main.py -i dataset/toydata_parsed/ -o toydata_mssa.vec  -m models/mssa.model -t mssa  -p False
+    
+    
+One may notice we provided the parameter -p False. This is because our toydata_parsed
+is already preprocessed and each token is in one line of the document. Thus is the format
+that mssa model is expecting. 
     
  
 ### Generating a Weka compatible file
@@ -53,7 +62,7 @@ compatible format
  
  There is one parameter to add :
  
-    -ar --> set True to enable arff compatibility 
+    -ah --> set True to enable arff compatibility 
 
 ##### example with google embedding
     

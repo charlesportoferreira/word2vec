@@ -15,18 +15,16 @@ from wordvector.Word2vec import Word2VectorUtil
 
 class Main:
     # TODO: check if we are working with the wrong model
-    # TODO: add an option to give a full path for input and model
-    # TODO: refactor code. Now this tool can work with doc2vec so it is not only w2v
 
     def main(self):
         command_line = CLWord2Vec()
 
-        in_foname = os.path.join(ppydir_name, command_line.input_folder)
-        mo_foname = os.path.join(ppydir_name, command_line.model_folder)
-
-        # ################################# simulation #################################################################
-        # w2v = Word2VectorUtil(aggregator=command_line.aggregator, model_path=mo_foname, simulation=True)
-        # ##############################################################################################################
+        if command_line.is_full_path:  # allow provide full path for input and model
+            in_foname = command_line.input_folder
+            mo_foname = command_line.model_file
+        else:  # provide relative path from current folder to destiny folder/file
+            in_foname = os.path.join(ppydir_name, command_line.input_folder)
+            mo_foname = os.path.join(ppydir_name, command_line.model_file)
 
         preprocess = Preprocess()
         file_util = FileUtil()
@@ -42,8 +40,8 @@ class Main:
 
         f = open(command_line.output_file, 'w', errors="ignore")
 
-        if command_line.arff_header:
-            relation_name = file_util.get_model_name(command_line.model_folder)
+        if command_line.is_arff_header:
+            relation_name = file_util.get_model_name(command_line.model_file)
             header = arff_util.get_header(number_features, labels, relation_name)
             f.write(header)
 

@@ -10,11 +10,12 @@ class CLWord2Vec:
         self.input_folder = args.inf
         self.output_file = args.out
         self.aggregator = args.agg
-        self.model_folder = args.mod
+        self.model_file = args.mod
         self.type = args.type
-        self.arff_header = self.str2bool(args.arff_header)
+        self.is_arff_header = self.str2bool(args.arff_header)
         self.preprocess = self.str2bool(args.pre)
         self.doc2vec = self.str2bool(args.doc)
+        self.is_full_path = self.str2bool(args.full_path)
 
     def define_parser_parameters(self):
         parser = argparse.ArgumentParser(description="Convert raw text documents into word embeddings")
@@ -36,6 +37,12 @@ class CLWord2Vec:
         parser.add_argument('--doc', '-d', type=str, action='store', dest='doc',
                             required=False, choices=['True', 'False'],
                             help='set True to feed the model with a single string containing all words. '
+                                 '(default: %(default)s)',
+                            default="False")
+
+        parser.add_argument('--full', '-f', type=str, action='store', dest='full_path',
+                            required=False, choices=['True', 'False'],
+                            help='set True allow user to provide full path to input folder and model file. '
                                  '(default: %(default)s)',
                             default="False")
 

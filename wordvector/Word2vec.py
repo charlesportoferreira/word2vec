@@ -5,7 +5,6 @@ from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.test.utils import get_tmpfile
 import warnings
 
-
 # ignore future warnings from tensorflow library
 with warnings.catch_warnings():
     warnings.filterwarnings("ignore", category=FutureWarning)
@@ -23,7 +22,14 @@ class Word2VectorUtil:
         self.type = model_type
         if not self.simulation:
             print("loading embedding model...")
-            self.model = self.load_model()
+            try:
+                self.model = self.load_model()
+            except FileNotFoundError:
+                print("-----------------------------------------------")
+                print("model not found: " + self.model_path)
+                print("check if the model name or the path is correct")
+                print("-----------------------------------------------")
+                quit()
             print('done!\nmodel-size:\t', self.get_number_features())
             self.number_features = self.get_number_features()
 
