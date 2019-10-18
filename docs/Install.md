@@ -41,8 +41,10 @@ of them on your machine.
 * Google word2vec: 
 [pre-trained model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit)
 ([paper1](http://arxiv.org/pdf/1301.3781.pdf), [paper2](http://arxiv.org/pdf/1301.3781.pdf), [paper3](http://arxiv.org/pdf/1301.3781.pdf))
-* fastText [link to the model][link to the paper]
-* Glove [link to the model][link to the paper]
+* fastText [pre-trained model](https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M-subword.vec.zip)
+([paper](https://arxiv.org/abs/1712.09405))
+* Glove [pre-trained model](http://nlp.stanford.edu/data/glove.6B.zip)
+[paper](https://nlp.stanford.edu/pubs/glove.pdf)
 * MSSA [link to the model][link to the paper]
 * Elmo [link to the paper]
 * USE [link to the paper]

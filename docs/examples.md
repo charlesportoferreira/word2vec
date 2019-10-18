@@ -31,7 +31,7 @@ file format and the support library used to handle the model
 
 ##### Google embedding
 
-    python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
+    python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/GoogleNews-vector-negative300.bin -t google 
     
 After executing you should have an output simliar to this one:
 
@@ -52,7 +52,7 @@ After executing you should have an output simliar to this one:
 
 ##### fastText embedding
 
-    python3 wordvector/main.py -i datasets/toydata -o fasttext.vec -m models/fasttext_model.txt -t fasttext 
+    python3 wordvector/main.py -i datasets/toydata -o fasttext.vec -m models/wiki-news-300d-1M-subword.vec -t fasttext 
 
 ##### MSSA embedding
 
