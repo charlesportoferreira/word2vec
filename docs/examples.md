@@ -42,9 +42,18 @@ file format and the support library used to handle the model
 
 ##### mssa embedding
 
-Mssa embedding model need a corpus properly parsed as 
-suggest by the original paper. We are also providing the same toydata
-with this format as example
+Mssa embedding model need a corpus properly parsed and preprocessed as 
+suggest by the original paper. We are also providing a toydata_parsed
+with this format as example. 
+
+
+ Since this dataset is already parsed and preprocessed
+we need to provide an additional parameter to inform that it is not necessary to
+apply any preprocessing:
+ 
+    -p --> set False to disable preprocessing 
+    
+To run mssa embedding, type:
 
     python3 wordvector/main.py -i dataset/toydata_parsed/ -o toydata_mssa.vec  -m models/mssa.model -t mssa  -p False
     
