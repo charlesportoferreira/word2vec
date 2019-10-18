@@ -55,7 +55,8 @@ After running the code one will end up with a file composed of
 ### Models folder
 In this folder, you need to keep your embeddings models
 
-It is necessary to keep your corpus and models in the correct folder because we are using a relative path to find theses files. So if you put them in a parent folder from this project it may not be able to find these files.
+It is necessary to keep your corpus and models in the correct folder because we are using a relative path to find theses files. So if you put them in a parent folder from this project it may not be able to find these files,
+unless you provide the flag -f True to inform that you are using full path 
 
 
 ### Libraries:
