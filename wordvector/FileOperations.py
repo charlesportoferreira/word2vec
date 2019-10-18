@@ -67,7 +67,7 @@ class ArffUtil:
         features += "}\n\n@DATA"
         return features
 
-    def get_instance(self, doc_vector, label):
+    def get_comma_separated_vector(self, doc_vector, label):
         data = ""
         for feature in doc_vector:
             data += str(feature) + ","

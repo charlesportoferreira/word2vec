@@ -72,17 +72,31 @@ class Main:
                     doc_without_vector += 1
                     continue  # no vector found to this document
                 doc_vector_counter += 1
-                instance = arff_util.get_instance(document_vector, label)
+                instance = arff_util.get_comma_separated_vector(document_vector, label)
                 f.write(instance)
                 count += 1
                 percentage = str(round(100 * count / number_files))
                 print("done " + str(count) + " of " + str(number_files) + " " + percentage + "%\r", end='')
 
             self.check_folder_with_no_vectors(doc_vector_counter, label)
-        print()
-        print("empty docs: " + str(empty_doc))
-        print("docs with no vectors: " + str(doc_without_vector))
+
+        self.check_empty_doc(empty_doc)
+        self.check_doc_with_no_vector(doc_without_vector)
         f.close()
+
+    def check_empty_doc(self, empty_doc):
+        if empty_doc != 0:
+            print()
+            print("-----------------------------------------------------------------------------------------------")
+            print("empty docs: " + str(empty_doc))
+            print("-----------------------------------------------------------------------------------------------")
+
+    def check_doc_with_no_vector(self, doc_without_vector):
+        if doc_without_vector != 0:
+            print()
+            print("-----------------------------------------------------------------------------------------------")
+            print("docs with no vectors: " + str(doc_without_vector))
+            print("-----------------------------------------------------------------------------------------------")
 
     def check_folder_with_no_vectors(self, doc_vector_counter, label):
         if doc_vector_counter == 0:

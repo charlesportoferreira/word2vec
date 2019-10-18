@@ -23,7 +23,6 @@ There are four mandatory input parameters:
     -m --> a relative path to the embedding model
     -t --> type of word embedding model
     
-    
 It is necessary to inform the type of the embedding model because each model have 
 a different strategy to access its vector. This strategy depends on the model file
 file format and the support library used to handle the model
@@ -33,6 +32,17 @@ file format and the support library used to handle the model
 ##### Google embedding
 
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
+    
+After executing you should have an output simliar to this one:
+
+
+    loading embedding model...
+    done!
+    model-size:	 300
+    
+    processing folder: path_to_your_project/word2vec/dataset/toydata/book
+    done 3 of 3 100%
+    processing folder: path_to_your_project/word2vec/dataset/toydata/paper
     
 ##### Glove embedding
 
