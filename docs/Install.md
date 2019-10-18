@@ -47,9 +47,14 @@ of them on your machine.
 
 ### Download
 
-Download this repository to your local machine or clone it with git clone.
+Download this repository to your local machine 
 
 ![download](repository.png)
+
+
+or clone it with git clone.
+
+       git clone https://github.com/charlesportoferreira/word2vec
 
 ### Project folder structure:
 
