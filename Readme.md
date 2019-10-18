@@ -12,11 +12,11 @@ use on machine learning tasks as document classification.
 [installation guide](docs/Install.md)
 
 
-### To use type: 
+### How to use 
 
 [usage examples](docs/examples.md)
 
-[TL_DR]\
+
 **python3 wordvector/main.py [options]**
 
   Options:
@@ -56,17 +56,25 @@ use on machine learning tasks as document classification.
           Its set which way document vector will be generated
           Default = mean
         
-        --noheader, -n: 
-          [Optional parameter] Set True to save the vectors without header
+        --arff-header, -ah: 
+          [Optional parameter] Set True to add an arff compatible header to the output file
           Default = False
 
         --preprocess, -p:
-          [Optional parameter] Set True to apply word tokenization. 
-          Otherwise it will assume each row has one word.
-          Default = False
+          [Optional parameter] Set False to avoid preprocessing, however it will assume each row has one word.
+          If it is True, will apply word tokenization, stopword removal and word lowercase.
+          Default = True 
           
         --doc, -d
           [Optional parameter] Set True to feed the model with
           all words as a single string
+          
+        --full-path, -f
+          [Optional parameter] Set True to allow full path on input data and model file, instead
+          of relative path.
+          Default = False
 
         
+### Changelog 
+
+[Changelog](docs/changelog.md)
