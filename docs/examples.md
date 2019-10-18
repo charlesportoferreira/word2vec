@@ -28,19 +28,19 @@ file format and the support library used to handle the model
 
 ### Example of how to run:
 
-##### google embedding
+##### Google embedding
 
     python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/google_model.bin -t google 
     
-##### glove embedding
+##### Glove embedding
 
     python3 wordvector/main.py -i datasets/toydata -o glove.vec -m models/glove_model.txt -t glove 
 
-##### fasttext embedding
+##### fastText embedding
 
     python3 wordvector/main.py -i datasets/toydata -o fasttext.vec -m models/fasttext_model.txt -t fasttext 
 
-##### mssa embedding
+##### MSSS embedding
 
 Mssa embedding model need a corpus properly parsed and preprocessed as 
 suggest by the original paper. We are also providing a toydata_parsed
@@ -58,9 +58,23 @@ To run mssa embedding, type:
     python3 wordvector/main.py -i dataset/toydata_parsed/ -o toydata_mssa.vec  -m models/mssa.model -t mssa  -p False
     
     
-One may notice we provided the parameter -p False. This is because our toydata_parsed
-is already preprocessed and each token is in one line of the document. Thus is the format
-that mssa model is expecting. 
+
+##### Elmo embedding
+
+To run Elmo it is not necessary to provide a embedding model 
+because our tool will fetch it from the web. So, one may set
+any value to the parameter -m. 
+
+    python3 wordvector/main.py -i datasets/toydata -o elmo.vec -m nothing -t elmo 
+    
+    
+
+##### USE embedding
+
+The same happens with USE, i.e, it is not necessary to provide
+a model.
+
+    python3 wordvector/main.py -i datasets/toydata -o use.vec -m nothing -t use 
     
  
 ### Generating a Weka compatible file

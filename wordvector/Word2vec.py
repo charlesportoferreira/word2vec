@@ -86,10 +86,10 @@ class Word2VectorUtil:
 
     def get_tensorflow_model(self, model_path):
         with tf.Graph().as_default():
-            sentences = tf.placeholder(tf.string)
+            sentences = tf.compat.v1.placeholder(tf.string)
             embed = hub.Module(model_path)
             embeddings = embed(sentences)
-            session = tf.train.MonitoredSession()
+            session = tf.compat.v1.train.MonitoredSession()
         return lambda x: session.run(embeddings, {sentences: x})
 
     def word2vec_simulation(self, value):
