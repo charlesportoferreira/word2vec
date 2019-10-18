@@ -1,4 +1,4 @@
-[back](../Readme.md)
+[\[back\]](../Readme.md)
 
 Currently, this tool can convert raw documents into vectors
 using the following embedding model:
@@ -7,8 +7,8 @@ using the following embedding model:
 * fastText [link to the model][link to the paper]
 * Glove [link to the model][link to the paper]
 * Elmo [link to the model][link to the paper]
-* USE [link to the model][link to the paper]
-* MSSA [link to the model][link to the paper]
+* USE [link to the paper]
+* MSSA [link to the paper]
 
 
 Some of them need to be called with specific parameters, so we are proving
@@ -59,8 +59,6 @@ To run mssa embedding, type:
 
     python3 wordvector/main.py -i dataset/toydata_parsed/ -o toydata_mssa.vec  -m models/mssa.model -t mssa  -p False
     
-    
-
 ##### Elmo embedding
 
 To run Elmo it is not necessary to provide a embedding model 
@@ -69,8 +67,6 @@ any value to the parameter -m.
 
     python3 wordvector/main.py -i datasets/toydata -o elmo.vec -m nothing -t elmo 
     
-    
-
 ##### USE embedding
 
 The same happens with USE, i.e, it is not necessary to provide
@@ -78,7 +74,6 @@ a model.
 
     python3 wordvector/main.py -i datasets/toydata -o use.vec -m nothing -t use 
     
- 
 ### Generating a Weka compatible file
 
 One may want to run experiments with [Weka](https://www.cs.waikato.ac.nz/ml/weka/).
@@ -91,11 +86,10 @@ compatible format
 
 ##### example with google embedding
     
-    
      python3 wordvector/main.py -i datasets/toydata -o google.arff -m models/google_model.bin -t google -ah True   
      
  Basically, the output file will have a header and attribute description compatible with
  the arff format.
  
  
-[back](../Readme.md)
+[\[back\]](../Readme.md)

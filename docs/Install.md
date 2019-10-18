@@ -1,4 +1,4 @@
-[back](../Readme.md)
+[\[back\]](../Readme.md)
 
 ## How to install
 
@@ -48,6 +48,8 @@ of them on your machine.
 ### Download
 
 Download this repository to your local machine or clone it with git clone.
+
+[download](docs/repository.png)
 
 ### Project folder structure:
 
@@ -108,4 +110,4 @@ To activate the virtual environment type:
     source env/bin/activate 
 
  
-[back](../Readme.md)
+[\[back\]](../Readme.md)
