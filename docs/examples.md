@@ -36,7 +36,7 @@ file format and the support library used to handle the model
 
 ##### Google embedding
 
-    python3 wordvector/main.py -i datasets/toydata -o google.vec -m models/GoogleNews-vector-negative300.bin -t google 
+    python3 wordvector/main.py -i dataset/toydata -o google.vec -m models/GoogleNews-vector-negative300.bin -t google 
     
 After executing you should have an output simliar to this one:
 
@@ -45,19 +45,19 @@ After executing you should have an output simliar to this one:
     done!
     model-size:	 300
     
-    processing folder: /home/charles/Documents/gitprojects/word2vec/dataset/toydata_parsed/book
+    processing folder: path_to_the_project/word2vec/dataset/toydata_parsed/book
     done 3 of 3 100%
     
-    processing folder: /home/charles/Documents/gitprojects/word2vec/dataset/toydata_parsed/paper
+    processing folder: path_to_the_project/word2vec/dataset/toydata_parsed/paper
     done 3 of 3 100%
 
 ##### Glove embedding
 
-    python3 wordvector/main.py -i datasets/toydata -o glove.vec -m models/glove_model.txt -t glove 
+    python3 wordvector/main.py -i dataset/toydata -o glove.vec -m models/glove_model.txt -t glove 
 
 ##### fastText embedding
 
-    python3 wordvector/main.py -i datasets/toydata -o fasttext.vec -m models/wiki-news-300d-1M-subword.vec -t fasttext 
+    python3 wordvector/main.py -i dataset/toydata -o fasttext.vec -m models/wiki-news-300d-1M-subword.vec -t fasttext 
 
 ##### MSSA embedding
 
@@ -82,14 +82,14 @@ To run Elmo it is not necessary to provide a embedding model
 because our tool will fetch it from the web. So, one may set
 any value to the parameter -m. 
 
-    python3 wordvector/main.py -i datasets/toydata -o elmo.vec -m nothing -t elmo 
+    python3 wordvector/main.py -i dataset/toydata -o elmo.vec -m nothing -t elmo 
     
 ##### USE embedding
 
 The same happens with USE, i.e, it is not necessary to provide
 a model.
 
-    python3 wordvector/main.py -i datasets/toydata -o use.vec -m nothing -t use 
+    python3 wordvector/main.py -i dataset/toydata -o use.vec -m nothing -t use 
     
 ### Generating a Weka compatible file
 
@@ -103,7 +103,7 @@ compatible format
 
 ##### example with google embedding
     
-     python3 wordvector/main.py -i datasets/toydata -o google.arff -m models/google_model.bin -t google -ah True   
+     python3 wordvector/main.py -i dataset/toydata -o google.arff -m models/google_model.bin -t google -ah True   
      
  Basically, the output file will have a header and attribute description compatible with
  the arff format.
