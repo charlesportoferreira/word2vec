@@ -1,12 +1,12 @@
 Currently, this tool can convert raw documents into vectors
 using the following embedding model:
 
-* google word2vec [link to the model][link to the paper]
+* Google word2vec [link to the model][link to the paper]
 * fastText [link to the model][link to the paper]
 * Glove [link to the model][link to the paper]
 * Elmo [link to the model][link to the paper]
 * USE [link to the model][link to the paper]
-* Mssa [link to the model][link to the paper]
+* MSSA [link to the model][link to the paper]
 
 
 Some of them need to be called with specific parameters, so we are proving
@@ -40,7 +40,7 @@ file format and the support library used to handle the model
 
     python3 wordvector/main.py -i datasets/toydata -o fasttext.vec -m models/fasttext_model.txt -t fasttext 
 
-##### MSSS embedding
+##### MSSA embedding
 
 Mssa embedding model need a corpus properly parsed and preprocessed as 
 suggest by the original paper. We are also providing a toydata_parsed

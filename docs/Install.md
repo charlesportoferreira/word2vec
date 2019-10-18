@@ -14,9 +14,40 @@ You should have an output similar to this:
 To install python libraries, one may need a python installing package.
  We suggest using [pip](https://pypi.org/project/pip/).
 
+
+
+### Libraries:
+
+You will need the following python libraries to run this code:
+nltk, stop-words, gensim, tensorflow, tensorflow-hub.
+
+One may install these libraries using the [pip](https://pypi.org/project/pip/) tool.
+ To do that, run the following commands:
+
+        pip install nltk
+        pip install stop-words
+        pip install gensim
+        pip install tensorflow
+        pip install tensorflow-hub
+
+
+### Embedding Models
+
+To extract vectors from documents we are using a few pre-trained model. It is necessary to have a copy
+of them on your machine.
+
+* Google word2vec [link to the model][link to the paper]
+* fastText [link to the model][link to the paper]
+* Glove [link to the model][link to the paper]
+* MSSA [link to the model][link to the paper]
+* Elmo [link to the model][link to the paper]
+* USE [link to the model][link to the paper]
+
+### Download
+
 Download this repository to your local machine or clone it with git clone.
 
-## Project folder structure:
+### Project folder structure:
 
 After download, go to the respected folder. You should have a project folder with the following structure:
 
@@ -56,22 +87,8 @@ After running the code one will end up with a file composed of
 In this folder, you need to keep your embeddings models
 
 It is necessary to keep your corpus and models in the correct folder because we are using a relative path to find theses files. So if you put them in a parent folder from this project it may not be able to find these files,
-unless you provide the flag -f True to inform that you are using full path 
+unless you provide the flag -f True to inform that you are using full path.
 
-
-### Libraries:
-
-You will need the following python libraries to run this code:
-nltk, stop-words, gensim, tensorflow, tensorflow-hub.
-
-One may install these libraries using the [pip](https://pypi.org/project/pip/) tool.
- To do that, run the following commands:
-
-        pip install nltk
-        pip install stop-words
-        pip install gensim
-        pip install tensorflow
-        pip install tensorflow-hub
 
 
 ### Creating a python 3 virtual environment
